@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GameBoardViewController.h"
 
 @interface AppDelegate ()
 

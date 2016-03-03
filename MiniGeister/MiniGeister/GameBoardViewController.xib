@@ -7,6 +7,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameBoardViewController">
             <connections>
+                <outlet property="cell10View" destination="DKA-jh-Rp2" id="jyG-SQ-DUP"/>
+                <outlet property="cell11View" destination="NRX-Zk-rgN" id="rCy-rr-gUD"/>
+                <outlet property="cell12View" destination="LXW-rV-zb5" id="Hac-VU-Tdh"/>
+                <outlet property="cell1view" destination="YfG-8T-Ya2" id="ns7-0K-KMK"/>
+                <outlet property="cell2View" destination="TJu-jv-A3q" id="y2y-l8-Je7"/>
+                <outlet property="cell3View" destination="l12-kn-7ca" id="ciC-s3-KVj"/>
+                <outlet property="cell4View" destination="BOm-MG-QZK" id="N9W-Kg-Kcz"/>
+                <outlet property="cell5View" destination="iEt-YT-mPo" id="tQ3-AS-I4U"/>
+                <outlet property="cell6View" destination="D3b-bO-fTn" id="8LT-rX-1gK"/>
+                <outlet property="cell7View" destination="obN-jC-rnl" id="lsr-l9-bfx"/>
+                <outlet property="cell8View" destination="ohy-gJ-nJe" id="f3Q-CW-cUO"/>
+                <outlet property="cell9View" destination="a2d-FX-dnN" id="Bvb-Fz-bsm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

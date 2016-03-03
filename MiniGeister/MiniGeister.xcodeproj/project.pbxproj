@@ -17,6 +17,7 @@
 		00FB677A1C87C8AE005288ED /* MiniGeisterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB67791C87C8AE005288ED /* MiniGeisterUITests.m */; };
 		00FB678C1C87C950005288ED /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB678A1C87C950005288ED /* GameBoardViewController.m */; };
 		00FB678D1C87C950005288ED /* GameBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FB678B1C87C950005288ED /* GameBoardViewController.xib */; };
+		00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB678F1C87CE56005288ED /* GameTitleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		00FB67891C87C950005288ED /* GameBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameBoardViewController.h; sourceTree = "<group>"; };
 		00FB678A1C87C950005288ED /* GameBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameBoardViewController.m; sourceTree = "<group>"; };
 		00FB678B1C87C950005288ED /* GameBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardViewController.xib; sourceTree = "<group>"; };
+		00FB678E1C87CE56005288ED /* GameTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTitleViewController.h; sourceTree = "<group>"; };
+		00FB678F1C87CE56005288ED /* GameTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTitleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 				00FB67891C87C950005288ED /* GameBoardViewController.h */,
 				00FB678A1C87C950005288ED /* GameBoardViewController.m */,
 				00FB678B1C87C950005288ED /* GameBoardViewController.xib */,
+				00FB678E1C87CE56005288ED /* GameTitleViewController.h */,
+				00FB678F1C87CE56005288ED /* GameTitleViewController.m */,
 			);
 			path = MiniGeister;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				00FB675C1C87C8AE005288ED /* ViewController.m in Sources */,
 				00FB678C1C87C950005288ED /* GameBoardViewController.m in Sources */,
 				00FB67591C87C8AE005288ED /* AppDelegate.m in Sources */,
+				00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */,
 				00FB67561C87C8AE005288ED /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
