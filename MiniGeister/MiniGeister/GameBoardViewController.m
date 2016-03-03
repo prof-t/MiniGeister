@@ -9,6 +9,7 @@
 #import "GameBoardViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "AlertView.h"
+#import "GamePiece.h"
 
 @interface GameBoardViewController ()
 
@@ -29,6 +30,10 @@
 @property (weak, nonatomic) IBOutlet UIView *cell14View;
 @property (weak, nonatomic) IBOutlet UIView *cell15View;
 @property (weak, nonatomic) IBOutlet UIView *cell16View;
+
+// ゲームのコマ管理クラスのインスタンス
+@property (nonatomic,strong) GamePiece *gamePiece;
+
 
 @end
 
@@ -55,12 +60,6 @@
     [self drawBorderLineWithView:self.cell14View];
     [self drawBorderLineWithView:self.cell15View];
     [self drawBorderLineWithView:self.cell16View];
-    
-    //　自コマの生成
-    UIView *myPiece = [self createGemePiece];
-    [self locatePieceWithCellView:self.cell15View piece:myPiece];
-    
-
 
 }
 
@@ -79,32 +78,6 @@
     view.layer.borderColor = [[UIColor darkGrayColor] CGColor];
     //角丸
     view.layer.cornerRadius = 10.0f;
-}
-
-// コマの生成
--(UIView *)createGemePiece
-{
-    UIView *pieceBaseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    pieceBaseView.backgroundColor = [UIColor clearColor];
-    UIView *pieceCircleView = [[UIView alloc]initWithFrame:pieceBaseView.frame];
-    pieceCircleView.alpha = 0.5;
-    pieceCircleView.layer.cornerRadius = pieceBaseView.frame.size.width * 0.5;
-    pieceCircleView.backgroundColor = [UIColor blueColor];
-    [pieceBaseView addSubview:pieceCircleView];
-    
-    [self.view addSubview:pieceBaseView];
-    
-    return pieceBaseView;
-}
-
-// コマを配置
-- (void)locatePieceWithCellView:(UIView *)cellView piece:(UIView *)piece
-{
-    CGRect afterRect = piece.frame;
-    piece.center = cellView.center;
-    afterRect.origin = CGPointMake(cellView.frame.origin.x + ((cellView.frame.size.width - piece.frame.size.width) / 2),
-                                     cellView.frame.origin.y + ((cellView.frame.size.height- piece.frame.size.height) / 2));
-    piece.frame = afterRect;
 }
 
 #pragma mark - IBAction
