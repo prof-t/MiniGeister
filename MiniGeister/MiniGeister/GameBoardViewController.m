@@ -12,7 +12,7 @@
 @interface GameBoardViewController ()
 
 // 盤上のマス目を表すView群
-@property (weak, nonatomic) IBOutlet UIView *cell1view;
+@property (weak, nonatomic) IBOutlet UIView *cell1View;
 @property (weak, nonatomic) IBOutlet UIView *cell2View;
 @property (weak, nonatomic) IBOutlet UIView *cell3View;
 @property (weak, nonatomic) IBOutlet UIView *cell4View;
@@ -24,6 +24,10 @@
 @property (weak, nonatomic) IBOutlet UIView *cell10View;
 @property (weak, nonatomic) IBOutlet UIView *cell11View;
 @property (weak, nonatomic) IBOutlet UIView *cell12View;
+@property (weak, nonatomic) IBOutlet UIView *cell13View;
+@property (weak, nonatomic) IBOutlet UIView *cell14View;
+@property (weak, nonatomic) IBOutlet UIView *cell15View;
+@property (weak, nonatomic) IBOutlet UIView *cell16View;
 
 @end
 
@@ -33,7 +37,7 @@
     [super viewDidLoad];
     
     //マス目に境界線を付ける
-    [self drawBorderLineWithView:self.cell1view];
+    [self drawBorderLineWithView:self.cell1View];
     [self drawBorderLineWithView:self.cell2View];
     [self drawBorderLineWithView:self.cell3View];
     [self drawBorderLineWithView:self.cell4View];
@@ -45,7 +49,14 @@
     [self drawBorderLineWithView:self.cell10View];
     [self drawBorderLineWithView:self.cell11View];
     [self drawBorderLineWithView:self.cell12View];
-
+    [self drawBorderLineWithView:self.cell13View];
+    [self drawBorderLineWithView:self.cell14View];
+    [self drawBorderLineWithView:self.cell15View];
+    [self drawBorderLineWithView:self.cell16View];
+    
+    //　自コマの生成
+    UIView *myPiece = [self createGemePiece];
+    [self locatePieceWithCellView:self.cell15View piece:myPiece];
 
 }
 
@@ -54,15 +65,44 @@
 
 }
 
+// マス目の境界線を生成
 - (void)drawBorderLineWithView:(UIView *)view
 {
+    view.backgroundColor = [UIColor lightGrayColor];
     //枠線
-    view.layer.borderWidth = 2.0f;
+    view.layer.borderWidth = 1.5f;
     //枠線の色
-    view.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    view.layer.borderColor = [[UIColor darkGrayColor] CGColor];
     //角丸
     view.layer.cornerRadius = 10.0f;
 }
+
+// コマの生成
+-(UIView *)createGemePiece
+{
+    UIView *pieceBaseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
+    pieceBaseView.backgroundColor = [UIColor clearColor];
+    UIView *pieceCircleView = [[UIView alloc]initWithFrame:pieceBaseView.frame];
+    pieceCircleView.alpha = 0.5;
+    pieceCircleView.layer.cornerRadius = pieceBaseView.frame.size.width * 0.5;
+    pieceCircleView.backgroundColor = [UIColor blueColor];
+    [pieceBaseView addSubview:pieceCircleView];
+    
+    [self.view addSubview:pieceBaseView];
+    
+    return pieceBaseView;
+}
+
+// コマを配置
+- (void)locatePieceWithCellView:(UIView *)cellView piece:(UIView *)piece
+{
+    CGRect afterRect = piece.frame;
+    piece.center = cellView.center;
+    afterRect.origin = CGPointMake(cellView.frame.origin.x + ((cellView.frame.size.width - piece.frame.size.width) / 2),
+                                     cellView.frame.origin.y + ((cellView.frame.size.height- piece.frame.size.height) / 2));
+    piece.frame = afterRect;
+}
+
 
 
 /*

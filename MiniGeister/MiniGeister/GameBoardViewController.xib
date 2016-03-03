@@ -10,7 +10,11 @@
                 <outlet property="cell10View" destination="DKA-jh-Rp2" id="jyG-SQ-DUP"/>
                 <outlet property="cell11View" destination="NRX-Zk-rgN" id="rCy-rr-gUD"/>
                 <outlet property="cell12View" destination="LXW-rV-zb5" id="Hac-VU-Tdh"/>
-                <outlet property="cell1view" destination="YfG-8T-Ya2" id="ns7-0K-KMK"/>
+                <outlet property="cell13View" destination="NTM-Yf-jqF" id="byb-UY-fZT"/>
+                <outlet property="cell14View" destination="Ta0-8L-sNn" id="w75-tU-Pe9"/>
+                <outlet property="cell15View" destination="EXw-AT-d2Y" id="LtV-LO-su9"/>
+                <outlet property="cell16View" destination="bba-0g-ZPF" id="7nr-Ud-hCB"/>
+                <outlet property="cell1View" destination="YfG-8T-Ya2" id="2co-AG-XxC"/>
                 <outlet property="cell2View" destination="TJu-jv-A3q" id="y2y-l8-Je7"/>
                 <outlet property="cell3View" destination="l12-kn-7ca" id="ciC-s3-KVj"/>
                 <outlet property="cell4View" destination="BOm-MG-QZK" id="N9W-Kg-Kcz"/>
@@ -87,8 +91,28 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <view contentMode="scaleToFill" id="NTM-Yf-jqF" userLabel="cell13">
+                    <rect key="frame" x="60" y="350" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="Ta0-8L-sNn" userLabel="cell14">
+                    <rect key="frame" x="110" y="350" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="EXw-AT-d2Y" userLabel="cell15">
+                    <rect key="frame" x="160" y="350" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" id="bba-0g-ZPF" userLabel="cell16">
+                    <rect key="frame" x="210" y="350" width="50" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="396" y="325"/>
         </view>
     </objects>
