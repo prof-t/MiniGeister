@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AlertView.h"
 #import "GamePiece.h"
+#import "MovePiece.h"
 
 @interface GameBoardViewController ()
 
@@ -33,6 +34,8 @@
 
 // ゲームのコマ管理クラスのインスタンス
 @property (nonatomic,strong) GamePiece *gamePiece;
+
+@property (nonatomic,strong) MovePiece *movePiece;
 
 
 @end
@@ -61,6 +64,12 @@
     [self drawBorderLineWithView:self.cell15View];
     [self drawBorderLineWithView:self.cell16View];
 
+    // 各クラスのインスタンスを生成
+    self.gamePiece = [[GamePiece alloc]init];
+    self.movePiece = [[MovePiece alloc]init];
+    
+   [self.gamePiece settingMyPieceWithView:self.view startCellFirstView:self.cell14View startCellSecondView:self.cell15View ];
+    [self.gamePiece settingEnemyPieceWithView:self.view startCellView:self.cell2View startCellSecondView:self.cell3View];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,6 +108,87 @@
     }];
     
     [alert show];
+}
+
+// タッチイベントを取る
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSArray *neighborCellNumArray;
+    
+    UITouch *touch = [touches anyObject];
+    
+    UIView *pieceView = [self.view viewWithTag:touch.view.tag];
+    UIView *baseCellView = [pieceView superview];
+    
+    NSInteger baseCellTag = [[pieceView superview] superview].tag;
+    
+    switch (touch.view.tag) {
+        case 101:
+            NSLog(@"1に触った");
+            break;
+        case 102:
+            NSLog(@"2に触った");
+            break;
+        case 103:
+            NSLog(@"3に触った");
+            break;
+        case 104:
+            NSLog(@"4に触った");
+            break;
+        case 105:
+            NSLog(@"5に触った");
+            break;
+        case 106:
+            NSLog(@"6に触った");
+            break;
+        case 107:
+            NSLog(@"7に触った");
+            break;
+        case 108:
+            NSLog(@"8に触った");
+            break;
+        case 109:
+            NSLog(@"9に触った");
+            break;
+        case 110:
+            NSLog(@"10に触った");
+            break;
+        case 111:
+            NSLog(@"11に触った");
+            break;
+        case 112:
+            NSLog(@"12に触った");
+            break;
+        case 113:
+            NSLog(@"13に触った");
+            break;
+        case 114:
+            NSLog(@"14に触った");
+            break;
+        case 115:
+            NSLog(@"15に触った");
+            break;
+        case 201:
+            NSLog(@"myPiece1に触った");
+            neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
+            break;
+        case 202:
+            NSLog(@"myPiece2に触った");
+            neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
+            break;
+        case 301:
+            NSLog(@"enemyPiece1に触った");
+            neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
+            break;
+        case 302:
+            NSLog(@"enemyPiece2に触った");
+            neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
+            break;
+        default:
+            // それ以外
+            NSLog(@"%ldに触った",touch.view.tag);
+            break;
+    }
 }
 
 

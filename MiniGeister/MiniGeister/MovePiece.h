@@ -26,6 +26,9 @@
 // コマと隣接するマスの内、埋まっているマスを得る
 - (NSArray *)getFilledCellArrayWithPiece;
 
+// コマと隣接するマスを得る
+- (NSArray *)getNeighborCellWithCurrentCellTag:(NSInteger)currentCellTag;
+
 // マス目の配置状況を更新する
 - (void)refreshCellArray;
 

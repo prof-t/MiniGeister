@@ -25,9 +25,9 @@
 @property (nonatomic,strong) UIView *enemyPiece4;
 
 // 自コマの初期設定を行う
-- (void)settingMyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView;
+- (void)settingMyPieceWithView:(UIView *)view startCellFirstView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
 
 // 敵コマの初期設定を行う
-- (void)settingEnemyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView;
+- (void)settingEnemyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
 
 @end
