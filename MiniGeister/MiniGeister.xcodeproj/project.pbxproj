@@ -19,6 +19,8 @@
 		00FB678D1C87C950005288ED /* GameBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FB678B1C87C950005288ED /* GameBoardViewController.xib */; };
 		00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB678F1C87CE56005288ED /* GameTitleViewController.m */; };
 		00FB67961C87DC58005288ED /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB67951C87DC58005288ED /* AlertView.m */; };
+		00FB67991C87E04D005288ED /* MovePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB67981C87E04D005288ED /* MovePiece.m */; };
+		00FB679C1C87F3F8005288ED /* GamePiece.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB679B1C87F3F8005288ED /* GamePiece.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		00FB678F1C87CE56005288ED /* GameTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTitleViewController.m; sourceTree = "<group>"; };
 		00FB67941C87DC58005288ED /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		00FB67951C87DC58005288ED /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		00FB67971C87E04D005288ED /* MovePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovePiece.h; sourceTree = "<group>"; };
+		00FB67981C87E04D005288ED /* MovePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovePiece.m; sourceTree = "<group>"; };
+		00FB679A1C87F3F8005288ED /* GamePiece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePiece.h; sourceTree = "<group>"; };
+		00FB679B1C87F3F8005288ED /* GamePiece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePiece.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		00FB67531C87C8AE005288ED /* MiniGeister */ = {
 			isa = PBXGroup;
 			children = (
+				00FB679D1C87F40D005288ED /* Parts */,
 				00FB67931C87DC0A005288ED /* View */,
 				00FB67921C87DBE3005288ED /* ViewController */,
 				00FB67571C87C8AE005288ED /* AppDelegate.h */,
@@ -172,6 +179,17 @@
 				00FB67951C87DC58005288ED /* AlertView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		00FB679D1C87F40D005288ED /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				00FB679A1C87F3F8005288ED /* GamePiece.h */,
+				00FB679B1C87F3F8005288ED /* GamePiece.m */,
+				00FB67971C87E04D005288ED /* MovePiece.h */,
+				00FB67981C87E04D005288ED /* MovePiece.m */,
+			);
+			name = Parts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +324,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00FB675C1C87C8AE005288ED /* ViewController.m in Sources */,
+				00FB67991C87E04D005288ED /* MovePiece.m in Sources */,
 				00FB678C1C87C950005288ED /* GameBoardViewController.m in Sources */,
 				00FB67591C87C8AE005288ED /* AppDelegate.m in Sources */,
 				00FB67961C87DC58005288ED /* AlertView.m in Sources */,
 				00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */,
+				00FB679C1C87F3F8005288ED /* GamePiece.m in Sources */,
 				00FB67561C87C8AE005288ED /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

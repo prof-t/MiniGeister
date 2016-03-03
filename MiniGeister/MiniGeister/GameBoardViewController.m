@@ -34,6 +34,7 @@
 
 @implementation GameBoardViewController
 
+#pragma mark - View LifeCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -58,6 +59,8 @@
     //　自コマの生成
     UIView *myPiece = [self createGemePiece];
     [self locatePieceWithCellView:self.cell15View piece:myPiece];
+    
+
 
 }
 
@@ -104,6 +107,7 @@
     piece.frame = afterRect;
 }
 
+#pragma mark - IBAction
 - (IBAction)tappedMenuButton:(id)sender
 {
     AlertView *alert = [[AlertView alloc]initWithTitle:@"ゲームを終了しますか？" message:@"「はい」を選ぶとタイトル画面に戻ります" owner:self];
@@ -124,15 +128,5 @@
     [alert show];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
