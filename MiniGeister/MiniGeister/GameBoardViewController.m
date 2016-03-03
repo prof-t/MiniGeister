@@ -8,6 +8,7 @@
 
 #import "GameBoardViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AlertView.h"
 
 @interface GameBoardViewController ()
 
@@ -103,6 +104,25 @@
     piece.frame = afterRect;
 }
 
+- (IBAction)tappedMenuButton:(id)sender
+{
+    AlertView *alert = [[AlertView alloc]initWithTitle:@"ゲームを終了しますか？" message:@"「はい」を選ぶとタイトル画面に戻ります" owner:self];
+    
+    __weak typeof(self) weakSelf = self;
+    __weak AlertView * weakAlert = alert;
+    
+    [alert addLabel:@"はい" handler:^{
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        UIViewController *initialViewController = [storyboard instantiateInitialViewController];
+        [weakSelf presentViewController:initialViewController animated:YES completion:nil];
+    }];
+    
+    [alert addLabel:@"いいえ" handler:^{
+        [weakAlert dismiss];
+    }];
+    
+    [alert show];
+}
 
 
 /*

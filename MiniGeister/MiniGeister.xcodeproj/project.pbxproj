@@ -18,6 +18,7 @@
 		00FB678C1C87C950005288ED /* GameBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB678A1C87C950005288ED /* GameBoardViewController.m */; };
 		00FB678D1C87C950005288ED /* GameBoardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FB678B1C87C950005288ED /* GameBoardViewController.xib */; };
 		00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB678F1C87CE56005288ED /* GameTitleViewController.m */; };
+		00FB67961C87DC58005288ED /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FB67951C87DC58005288ED /* AlertView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		00FB678B1C87C950005288ED /* GameBoardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameBoardViewController.xib; sourceTree = "<group>"; };
 		00FB678E1C87CE56005288ED /* GameTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTitleViewController.h; sourceTree = "<group>"; };
 		00FB678F1C87CE56005288ED /* GameTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTitleViewController.m; sourceTree = "<group>"; };
+		00FB67941C87DC58005288ED /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		00FB67951C87DC58005288ED /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,20 +112,15 @@
 		00FB67531C87C8AE005288ED /* MiniGeister */ = {
 			isa = PBXGroup;
 			children = (
+				00FB67931C87DC0A005288ED /* View */,
+				00FB67921C87DBE3005288ED /* ViewController */,
 				00FB67571C87C8AE005288ED /* AppDelegate.h */,
 				00FB67581C87C8AE005288ED /* AppDelegate.m */,
-				00FB675A1C87C8AE005288ED /* ViewController.h */,
-				00FB675B1C87C8AE005288ED /* ViewController.m */,
 				00FB675D1C87C8AE005288ED /* Main.storyboard */,
 				00FB67601C87C8AE005288ED /* Assets.xcassets */,
 				00FB67621C87C8AE005288ED /* LaunchScreen.storyboard */,
 				00FB67651C87C8AE005288ED /* Info.plist */,
 				00FB67541C87C8AE005288ED /* Supporting Files */,
-				00FB67891C87C950005288ED /* GameBoardViewController.h */,
-				00FB678A1C87C950005288ED /* GameBoardViewController.m */,
-				00FB678B1C87C950005288ED /* GameBoardViewController.xib */,
-				00FB678E1C87CE56005288ED /* GameTitleViewController.h */,
-				00FB678F1C87CE56005288ED /* GameTitleViewController.m */,
 			);
 			path = MiniGeister;
 			sourceTree = "<group>";
@@ -151,6 +149,29 @@
 				00FB677B1C87C8AE005288ED /* Info.plist */,
 			);
 			path = MiniGeisterUITests;
+			sourceTree = "<group>";
+		};
+		00FB67921C87DBE3005288ED /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				00FB675A1C87C8AE005288ED /* ViewController.h */,
+				00FB675B1C87C8AE005288ED /* ViewController.m */,
+				00FB67891C87C950005288ED /* GameBoardViewController.h */,
+				00FB678A1C87C950005288ED /* GameBoardViewController.m */,
+				00FB678B1C87C950005288ED /* GameBoardViewController.xib */,
+				00FB678E1C87CE56005288ED /* GameTitleViewController.h */,
+				00FB678F1C87CE56005288ED /* GameTitleViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		00FB67931C87DC0A005288ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00FB67941C87DC58005288ED /* AlertView.h */,
+				00FB67951C87DC58005288ED /* AlertView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +308,7 @@
 				00FB675C1C87C8AE005288ED /* ViewController.m in Sources */,
 				00FB678C1C87C950005288ED /* GameBoardViewController.m in Sources */,
 				00FB67591C87C8AE005288ED /* AppDelegate.m in Sources */,
+				00FB67961C87DC58005288ED /* AlertView.m in Sources */,
 				00FB67901C87CE56005288ED /* GameTitleViewController.m in Sources */,
 				00FB67561C87C8AE005288ED /* main.m in Sources */,
 			);
@@ -514,6 +536,7 @@
 				00FB67801C87C8AE005288ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00FB67811C87C8AE005288ED /* Build configuration list for PBXNativeTarget "MiniGeisterTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +545,7 @@
 				00FB67831C87C8AE005288ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00FB67841C87C8AE005288ED /* Build configuration list for PBXNativeTarget "MiniGeisterUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +554,7 @@
 				00FB67861C87C8AE005288ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
