@@ -172,6 +172,9 @@ static CGPoint const cell16ViewPoint = {210,350};
                     [self changeCellBackgroundColorToDefaultColor];
                     [self.gamePiece locatePieceWithCellView:touchedCellView piece:self.currentGamePiece];
                     self.isMoveMode = NO;
+                    
+                    // 移動後が出口マス？
+                    [self checkedEscapeCell];
                 }
                 
     
@@ -303,6 +306,28 @@ static CGPoint const cell16ViewPoint = {210,350};
     self.cell14View.backgroundColor = [UIColor lightGrayColor];
     self.cell15View.backgroundColor = [UIColor lightGrayColor];
     self.cell16View.backgroundColor = [UIColor lightGrayColor];
+}
+
+// 移動後が出口マスかのチェック
+- (void)checkedEscapeCell
+{
+    CGPoint currentPieceViewPoint = CGPointMake(self.currentGamePiece.frame.origin.x - 10,
+                                                 self.currentGamePiece.frame.origin.y - 10);
+    if (CGPointEqualToPoint(currentPieceViewPoint, cell1ViewPoint)|| CGPointEqualToPoint(currentPieceViewPoint, cell4ViewPoint)){
+        
+        AlertView *alert = [[AlertView alloc]initWithTitle:@"ゲームをクリアしました！" message:@"OKを選ぶとタイトル画面に戻ります" owner:self];
+        
+        __weak typeof(self) weakSelf = self;
+        __weak AlertView * weakAlert = alert;
+        
+        [alert addLabel:@"OK" handler:^{
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            UIViewController *initialViewController = [storyboard instantiateInitialViewController];
+            [weakSelf presentViewController:initialViewController animated:YES completion:nil];
+        }];
+        
+        [alert show];
+    }
 }
 
 
