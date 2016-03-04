@@ -16,6 +16,8 @@ static NSInteger const EnemyPiece2Tag = 302;
 
 @interface GamePiece()
 
+@property (nonatomic,assign) CGPoint PiecePoint;
+
 @end
 
 
@@ -73,7 +75,10 @@ static NSInteger const EnemyPiece2Tag = 302;
     piece.center = cellView.center;
     afterRect.origin = CGPointMake(cellView.frame.origin.x + ((cellView.frame.size.width - piece.frame.size.width) / 2),
                                    cellView.frame.origin.y + ((cellView.frame.size.height- piece.frame.size.height) / 2));
-    piece.frame = afterRect;
+    
+    
+
+    
 }
 
 @end

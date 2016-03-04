@@ -30,4 +30,7 @@
 // 敵コマの初期設定を行う
 - (void)settingEnemyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
 
+// コマの移動
+- (void)locatePieceWithCellView:(UIView *)cellView piece:(UIView *)piece;
+
 @end
