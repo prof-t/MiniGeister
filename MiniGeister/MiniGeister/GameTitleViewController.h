@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ ゲームタイトル画面を管理するViewController
+ */
 @interface GameTitleViewController : UIViewController
 
 @end
