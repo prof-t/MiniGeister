@@ -318,7 +318,6 @@ static CGPoint const cell16ViewPoint = {210,350};
         AlertView *alert = [[AlertView alloc]initWithTitle:@"ゲームをクリアしました！" message:@"OKを選ぶとタイトル画面に戻ります" owner:self];
         
         __weak typeof(self) weakSelf = self;
-        __weak AlertView * weakAlert = alert;
         
         [alert addLabel:@"OK" handler:^{
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
