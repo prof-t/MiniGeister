@@ -90,8 +90,8 @@ static CGPoint const cell16ViewPoint = {210,350};
     self.gamePiece = [[GamePiece alloc]init];
     self.movePiece = [[MovePiece alloc]init];
     
-    [self.gamePiece settingMyPieceWithView:self.view startCellFirstView:self.cell14View startCellSecondView:self.cell15View ];
-    [self.gamePiece settingEnemyPieceWithView:self.view startCellView:self.cell2View startCellSecondView:self.cell3View];
+    [self.gamePiece settingMyPieceWithViewController:self startCellFirstView:self.cell14View startCellSecondView:self.cell15View ];
+    [self.gamePiece settingEnemyPieceWithViewController:self startCellView:self.cell2View startCellSecondView:self.cell3View];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -28,24 +28,24 @@
 
 /**
  自コマの初期設定を行う
- @param view 任意のview
- @param startCellView 自コマ1のviewを入れる
- @param startCellSecondView 自コマ2のviewを入れる
+ @param viewController      コマを配置する土台となるViewController
+ @param startCellView       自コマ1の初期配置位置となるview
+ @param startCellSecondView 自コマ2の初期配置位置となるview
  */
-- (void)settingMyPieceWithView:(UIView *)view startCellFirstView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
+- (void)settingMyPieceWithViewController:(UIViewController *)viewController startCellFirstView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
 
 /**
  敵コマの初期設定を行う
- @param view 任意のview
- @param startCellView 敵コマ1のviewを入れる
- @param startCellSecondView 敵コマ2のviewを入れる
+ @param viewController      コマを配置する土台となるViewController
+ @param startCellView       敵コマ1の初期配置位置となるview
+ @param startCellSecondView 敵コマ2の初期配置位置となるview
  */
-- (void)settingEnemyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
+- (void)settingEnemyPieceWithViewController:(UIViewController *)viewController startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView;
 
 /**
  コマの移動
  @param cellView 移動先のView
- @param piece 現在選択されているpiece
+ @param piece    現在選択されているpiece
  */
 - (void)locatePieceWithCellView:(UIView *)cellView piece:(UIView *)piece;
 

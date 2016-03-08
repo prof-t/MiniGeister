@@ -13,21 +13,19 @@ static NSInteger const MyPiece2Tag = 202;
 static NSInteger const EnemyPiece1Tag = 301;
 static NSInteger const EnemyPiece2Tag = 302;
 
-
 @interface GamePiece()
 
 @property (nonatomic,assign) CGPoint PiecePoint;
 
 @end
 
-
 @implementation GamePiece
 
-- (void)settingMyPieceWithView:(UIView *)view startCellFirstView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView
+- (void)settingMyPieceWithViewController:(UIViewController *)viewController startCellFirstView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView
 {
     //　自コマの生成
-    self.myPiece1 = [self createGemePieceWithView:view color:[UIColor redColor] tag:MyPiece1Tag];
-    self.myPiece2 = [self createGemePieceWithView:view color:[UIColor blueColor] tag:MyPiece2Tag];
+    self.myPiece1 = [self createGemePieceWithViewController:viewController color:[UIColor redColor] tag:MyPiece1Tag];
+    self.myPiece2 = [self createGemePieceWithViewController:viewController color:[UIColor blueColor] tag:MyPiece2Tag];
     
     self.myPiece1.tag = MyPiece1Tag;
     self.myPiece2.tag = MyPiece2Tag;
@@ -37,11 +35,11 @@ static NSInteger const EnemyPiece2Tag = 302;
 }
 
 
-- (void)settingEnemyPieceWithView:(UIView *)view startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView
+- (void)settingEnemyPieceWithViewController:(UIViewController *)viewController startCellView:(UIView *)startCellView startCellSecondView:(UIView *)startCellSecondView
 {
     //　敵コマの生成
-    self.enemyPiece1 = [self createGemePieceWithView:view color:[UIColor whiteColor] tag:EnemyPiece1Tag];
-    self.enemyPiece2 = [self createGemePieceWithView:view color:[UIColor whiteColor] tag:EnemyPiece2Tag];
+    self.enemyPiece1 = [self createGemePieceWithViewController:viewController color:[UIColor whiteColor] tag:EnemyPiece1Tag];
+    self.enemyPiece2 = [self createGemePieceWithViewController:viewController color:[UIColor whiteColor] tag:EnemyPiece2Tag];
     
     self.enemyPiece1.tag = EnemyPiece1Tag;
     self.enemyPiece2.tag = EnemyPiece2Tag;
@@ -51,7 +49,7 @@ static NSInteger const EnemyPiece2Tag = 302;
 }
 
 // コマの生成
--(UIView *)createGemePieceWithView:(UIView *)view color:(UIColor *)color tag:(NSInteger)tag
+-(UIView *)createGemePieceWithViewController:(UIViewController *)viewController color:(UIColor *)color tag:(NSInteger)tag
 {
     UIView *pieceBaseView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
     pieceBaseView.backgroundColor = [UIColor clearColor];
@@ -63,7 +61,7 @@ static NSInteger const EnemyPiece2Tag = 302;
     pieceCircleView.tag = tag;
     [pieceBaseView addSubview:pieceCircleView];
     
-    [view addSubview:pieceBaseView];
+    [viewController.view addSubview:pieceBaseView];
     
     return pieceBaseView;
 }
