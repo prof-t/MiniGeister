@@ -135,9 +135,8 @@ static CGPoint const cell16ViewPoint = {210,350};
 // タッチイベントを取る
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    
     NSArray *neighborCellNumArray;
+    NSArray *okCellArray;
     
     UITouch *touch = [touches anyObject];
     
@@ -184,21 +183,12 @@ static CGPoint const cell16ViewPoint = {210,350};
         
         switch (touch.view.tag) {
             case 201:
-                baseCellTag = [self getCellViewTagWithPiecePoint:pieceViewBaseCellPoint piece:pieceView];
-                neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
-                [self changeColorWithNeighborCellWithArray:neighborCellNumArray];
-                self.currentGamePiece = pieceView;
-                
-                //            self.gamePiece.myPiece2.userInteractionEnabled = NO;
-                break;
             case 202:
                 baseCellTag = [self getCellViewTagWithPiecePoint:pieceViewBaseCellPoint piece:pieceView];
                 neighborCellNumArray = [self.movePiece getNeighborCellWithCurrentCellTag:baseCellTag];
-                [self changeColorWithNeighborCellWithArray:neighborCellNumArray];
+                okCellArray = [self getOKCellWithNeighborArray:neighborCellNumArray];
+                [self changeColorWithNeighborCellWithArray:okCellArray];
                 self.currentGamePiece = pieceView;
-                
-                //            self.gamePiece.myPiece1.userInteractionEnabled = NO;
-                
                 break;
             case 301:
                 NSLog(@"enemyPiece1に触った");
@@ -214,6 +204,38 @@ static CGPoint const cell16ViewPoint = {210,350};
                 break;
         }
     }
+}
+
+// 隣接cellの中から、移動Okなcellのtagを得る
+- (NSMutableArray *)getOKCellWithNeighborArray:(NSArray *)neighborArray
+{
+    // コマの座標を得る（cellの座標と比較するために位置調整も行う）
+    CGPoint myPiece1 = CGPointMake(self.gamePiece.myPiece1.frame.origin.x - 10,
+                                   self.gamePiece.myPiece1.frame.origin.y - 10);
+    CGPoint myPiece2 = CGPointMake(self.gamePiece.myPiece2.frame.origin.x - 10,
+                                   self.gamePiece.myPiece2.frame.origin.y - 10);
+    CGPoint enemyPiece1 = CGPointMake(self.gamePiece.enemyPiece1.frame.origin.x - 10,
+                                   self.gamePiece.enemyPiece1.frame.origin.y - 10);
+    CGPoint enemyPiece2 = CGPointMake(self.gamePiece.enemyPiece2.frame.origin.x - 10,
+                                   self.gamePiece.enemyPiece2.frame.origin.y - 10);
+    
+    // 移動okなcellのarrayを作る
+    NSMutableArray *okViewArray = [NSMutableArray array];
+    for (NSNumber *tag in neighborArray){
+        UIView *view = [self.view viewWithTag:[tag integerValue]];
+        
+        // 隣接cellとコマの座標を比較して、一致していればそのcellは対象外とする
+        if (CGPointEqualToPoint(view.frame.origin, myPiece1) || CGPointEqualToPoint(view.frame.origin, myPiece2)||CGPointEqualToPoint(view.frame.origin, enemyPiece1)||CGPointEqualToPoint(view.frame.origin, enemyPiece2) ){
+            
+        } else {
+            
+            if (view.tag != 0){
+                [okViewArray addObject:[NSNumber numberWithInteger:view.tag]];
+            }
+        }
+    }
+    
+    return okViewArray;
 }
 
 - (NSInteger)getCellViewTagWithPiecePoint:(CGPoint)piecePoint piece:(UIView *)piece
